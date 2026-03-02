@@ -124,6 +124,7 @@ if not DEBUG:
     sentry_sdk.init(
         dsn=os.environ.get("SENTRY_DNS"),
         send_default_pii=True,
+        enable_logs=True,
     )
 
 

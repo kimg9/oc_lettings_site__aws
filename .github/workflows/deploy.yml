@@ -83,6 +83,7 @@ jobs:
             -t ${{ env.DOCKER_IMAGE_NAME }}:latest .
           docker push ${{ env.DOCKER_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           docker push ${{ env.DOCKER_IMAGE_NAME }}:latest
+          echo "image=${{ env.DOCKER_IMAGE_NAME }}:${{ env.IMAGE_TAG }}" >> $GITHUB_OUTPUT
 
       - name: Fill in the new ID in the Amazon ECS task definition
         id: task-def
@@ -90,7 +91,7 @@ jobs:
         with:
           task-definition: .aws/task-definition.json
           container-name: oc-lettings_django_container
-          image: ${{ steps.build-image.outputs.image }}
+          image: ${{ env.DOCKER_IMAGE_NAME }}:latest
           environment-variables: |
             AWS_STORAGE_BUCKET_NAME=${{ secrets.AWS_STORAGE_BUCKET_NAME }}
             SENTRY_DNS=${{ secrets.SENTRY_DNS }}

@@ -6,8 +6,8 @@ class Profile(models.Model):
     """
     Model representing a profile.
 
-    :ivar user: One-to-one relationship with Django User model
-    :ivar favorite_city: Optional favorite city of the user (max 64 chars)
+    :@var user: One-to-one relationship with Django User model
+    :@var favorite_city: Optional favorite city of the user (max 64 chars)
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     favorite_city = models.CharField(max_length=64, blank=True)

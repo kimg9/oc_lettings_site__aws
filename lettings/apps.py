@@ -5,6 +5,6 @@ class LettingsConfig(AppConfig):
     """
     Configuration class for the Lettings application.
 
-    :ivar name: Name of the Django application.
+    :@var name: Name of the Django application.
     """
     name = 'lettings'

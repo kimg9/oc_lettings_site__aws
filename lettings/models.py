@@ -7,12 +7,12 @@ class Address(models.Model):
     """
     Model representing a postal address.
 
-    :ivar number: PositiveIntegerField, street number (max 4 digits)
-    :ivar street: CharField, street name (max 64 chars)
-    :ivar city: CharField, city name (max 64 chars)
-    :ivar state: CharField, state code (2 chars)
-    :ivar zip_code: PositiveIntegerField, postal code (max 5 digits)
-    :ivar country_iso_code: CharField, ISO country code (3 chars)
+    :@var number: PositiveIntegerField, street number (max 4 digits)
+    :@var street: CharField, street name (max 64 chars)
+    :@var city: CharField, city name (max 64 chars)
+    :@var state: CharField, state code (2 chars)
+    :@var zip_code: PositiveIntegerField, postal code (max 5 digits)
+    :@var country_iso_code: CharField, ISO country code (3 chars)
     """
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
@@ -39,8 +39,8 @@ class Letting(models.Model):
     """
     Model representing a rental property (letting).
 
-    :ivar title: CharField, title of the letting (max 256 chars)
-    :ivar address: OneToOneField, linked Address instance
+    :@var title: CharField, title of the letting (max 256 chars)
+    :@var address: OneToOneField, linked Address instance
     """
     title = models.CharField(max_length=256)
     address = models.OneToOneField(Address, on_delete=models.CASCADE)

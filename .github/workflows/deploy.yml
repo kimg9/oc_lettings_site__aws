@@ -20,7 +20,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
@@ -44,15 +44,9 @@ jobs:
       - name: Run Tests
         run: pytest .
 
-  check-build:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Tous les tests sont passés."
-
   deploy:
     name: Deploy
-    needs: check-build
+    needs: tests
     runs-on: ubuntu-latest
     environment: production
 

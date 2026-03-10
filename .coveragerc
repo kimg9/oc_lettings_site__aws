@@ -1,0 +1,17 @@
+[run]
+source =
+    lettings
+    profiles
+    oc_lettings_site
+
+omit =
+    */migrations/*
+    */tests.py
+    */tests/*
+    manage.py
+    oc_letting_site/wsgi.py
+    oc_letting_site/asgi.py
+
+[report]
+fail_under = 80
+skip_covered = False

@@ -41,9 +41,12 @@ jobs:
         run: isort . --check-only
       - name: Run flake8
         run: flake8 .
-      - name: Run Tests
+      - name: Run tests
         run: pytest .
-
+      - name: Run coverage
+        run: |
+          coverage run -m pytest
+          coverage report --fail-under=80
   deploy:
     name: Deploy
     needs: tests

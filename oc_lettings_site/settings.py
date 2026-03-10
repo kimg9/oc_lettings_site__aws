@@ -129,7 +129,6 @@ if not DEBUG:
 
 
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-print(f"Le nom du buckest est: {AWS_STORAGE_BUCKET_NAME}")
 
 if AWS_STORAGE_BUCKET_NAME:
     INSTALLED_APPS += ['storages']

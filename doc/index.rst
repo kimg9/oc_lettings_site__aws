@@ -1,6 +1,6 @@
 .. Documentation du Projet Holidays Home documentation master file.
 
-Bienvenue dans la documentation de Holidays Home
+Documentation
 =======================================================
 
 Cette documentation détaille les aspects techniques de l'application Django 
